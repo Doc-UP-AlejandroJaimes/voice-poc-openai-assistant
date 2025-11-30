@@ -8,7 +8,7 @@ export const useAudioRecorder = (): AudioRecorderHook => {
 
   const mediaRecorderRef = useRef<MediaRecorder | null>(null)
   const audioChunksRef = useRef<Blob[]>([])
-  const silenceTimerRef = useRef<NodeJS.Timeout | null>(null)
+  const silenceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   const startRecording = useCallback(async (): Promise<void> => {
     console.log('🎤 [Hook] startRecording llamado')

@@ -31,7 +31,7 @@ export interface Conversation {
   last_message?: string
 }
 
-// Nuevos tipos de autenticación
+// Tipos de autenticación
 export interface User {
   user_id: number
   username: string
@@ -57,4 +57,35 @@ export interface AuthResponse {
   access_token: string
   token_type: string
   user: User
+}
+
+// AGREGAR ESTOS TIPOS FALTANTES:
+
+export interface TranscriptionResponse {
+  text: string
+  duration?: number
+}
+
+export interface ChatRequest {
+  message: string
+  conversation_history: Array<{
+    role: string
+    content: string
+  }>
+}
+
+export interface ChatResponse {
+  response: string
+  conversation_history: Array<ChatMessage>
+}
+
+export interface TTSRequest {
+  text: string
+  voice?: string | null
+}
+
+export interface HealthResponse {
+  status: string
+  version: string
+  timestamp?: string
 }
