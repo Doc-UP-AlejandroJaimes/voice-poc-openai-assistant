@@ -1,9 +1,9 @@
 import axios from 'axios'
 import type {
   TranscriptionResponse,
-  ChatRequest,
+  // ChatRequest,
   ChatResponse,
-  TTSRequest,
+  // TTSRequest,
   HealthResponse,
   AuthResponse,
   LoginCredentials,
