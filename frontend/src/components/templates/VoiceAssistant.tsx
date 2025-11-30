@@ -8,8 +8,6 @@ import { MessagePanel } from '@/components/organisms/MessagePanel'
 import type { Conversation, ChatMessage } from '@/types'
 import { useAuth } from '@/contexts/AuthContext'
 
-const USER_ID = 'default_user' // Hardcoded por ahora
-
 export const VoiceAssistant: React.FC = () => {
   const [conversations, setConversations] = useState<Conversation[]>([])
   const [activeConversationId, setActiveConversationId] = useState<number | null>(null)
@@ -39,7 +37,7 @@ export const VoiceAssistant: React.FC = () => {
 
   // Timer de llamada
   useEffect(() => {
-    let interval: NodeJS.Timeout
+    let interval: ReturnType<typeof setInterval>
     if (isInCall) {
       interval = setInterval(() => {
         setCallDuration((prev) => prev + 1)
